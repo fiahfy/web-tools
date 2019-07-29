@@ -2,40 +2,33 @@
   "name": "web-tools",
   "description": "My Tools on Web",
   "version": "1.0.0",
-  "author": "fiahfy",
+  "author": {
+    "name": "fiahfy",
+    "email": "d.fiahfy@gmail.com",
+    "url": "https://fiahfy.github.io/"
+  },
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
-    "vuetify": "^1.5.5",
-    "vuetify-loader": "^1.2.1"
+    "nuxt": "^2.8.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
-    "babel-eslint": "^10.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/vuetify": "^1.0.2",
+    "babel-eslint": "^10.0.2",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-config-standard": ">=12.0.0",
-    "eslint-loader": "^2.1.2",
-    "eslint-plugin-import": ">=2.16.0",
-    "eslint-plugin-jest": ">=22.3.0",
-    "eslint-plugin-node": ">=8.0.1",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-promise": ">=4.0.1",
-    "eslint-plugin-standard": ">=4.0.0",
-    "eslint-plugin-vue": "^5.2.2",
-    "nodemon": "^1.18.9",
-    "prettier": "^1.16.4",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2"
+    "eslint-plugin-nuxt": "^0.4.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.1",
+    "prettier": "^1.18.2"
   },
   "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt",
     "generate": "nuxt generate && rm -rf docs && cp -r dist docs",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint",
-    "start": "nuxt start"
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --ignore-pattern docs .",
+    "start": "nuxt start",
+    "test": "npm run lint"
   }
 }

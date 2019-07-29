@@ -1,6 +1,6 @@
 <template>
-  <v-layout justify-center>
-    <v-flex xs12>
+  <v-row>
+    <v-col cols="12">
       <h1>my-decoder</h1>
       <v-textarea
         v-model="input"
@@ -18,8 +18,8 @@
         class="my-3"
         placeholder="No data"
       />
-    </v-flex>
-  </v-layout>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
