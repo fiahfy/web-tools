@@ -1,69 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
-
-export default {
-  mode: 'spa',
-  /*
-   ** Headers of the page
-   */
-  head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-  },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
-  css: [],
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [],
-  /*
-   ** Nuxt.js dev-modules
-   */
-  devModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
-  ],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [],
-  /*
-   ** vuetify module configuration
-   ** https://github.com/nuxt-community/vuetify-module
-   */
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    treeShake: true,
-    theme: {
-      themes: {
-        light: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
-  },
+module.exports = {
   /*
    ** Build configuration
    */
@@ -71,14 +6,109 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(_config, _ctx) {},
   },
 
+  /*
+   ** Build modules
+   */
+  buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api'],
+
+  /*
+   ** Global CSS
+   */
+  css: [
+    '@mdi/font/css/materialdesignicons.css',
+    'typeface-roboto/index.css',
+    '~/assets/app.scss',
+  ],
+
+  /*
+   ** Generate configuration
+   */
   generate: {
-    fallback: true
+    dir: 'docs',
+    fallback: true,
   },
+
+  /*
+   ** Customize the progress-bar color
+   */
+  loading: { color: '#fff' },
+
+  /*
+   ** Headers of the page
+   */
+  head: {
+    titleTemplate: '%s - ' + process.env.npm_package_name,
+    title: process.env.npm_package_name,
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description,
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+
+  /*
+   ** SPA or Universal
+   */
+  mode: 'spa',
+
+  /*
+   ** Nuxt.js modules
+   */
+  modules: [
+    [
+      '@nuxtjs/vuetify',
+      {
+        customVariables: ['~/assets/variables.scss'],
+        defaultAssets: false,
+        theme: {
+          themes: {
+            light: {
+              primary: '#ff4081',
+              secondary: '#424242',
+              accent: '#ff4081',
+            },
+            dark: {
+              primary: '#ff4081',
+              secondary: '#E0E0E0',
+              accent: '#ff4081',
+            },
+          },
+        },
+      },
+    ],
+  ],
+
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [],
+
+  /*
+   ** Router configuration
+   */
   router: {
-    base: '/web-tools/'
+    base: '/web-tools/',
   },
-  srcDir: 'src'
+
+  /*
+   ** Source directory
+   */
+  srcDir: 'src',
+
+  /*
+   ** Vue configuration
+   */
+  vue: {
+    config: {
+      productionTip: false,
+    },
+  },
 }

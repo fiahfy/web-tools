@@ -2,9 +2,9 @@
 
 > My Tools on Web. [https://fiahfy.github.io/web-tools/](https://fiahfy.github.io/web-tools/)
 
-
 ## Build Setup
-``` bash
+
+```bash
 # install dependencies
 $ yarn install
 

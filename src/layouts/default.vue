@@ -1,9 +1,9 @@
 <template>
   <v-app>
-    <v-content>
+    <v-main>
       <v-container class="fill-height align-start">
         <nuxt />
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>

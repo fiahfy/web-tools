@@ -8,26 +8,32 @@
     "url": "https://fiahfy.github.io/"
   },
   "dependencies": {
-    "nuxt": "^2.8.1"
+    "@mdi/font": "^5.4.55",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "nuxt": "^2.13.3",
+    "nuxt-composition-api": "^0.11.0",
+    "typeface-roboto": "^0.0.75"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^1.0.1",
-    "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/vuetify": "^1.0.2",
-    "babel-eslint": "^10.0.2",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-nuxt": "^0.4.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^3.0.1",
-    "prettier": "^1.18.2"
+    "@nuxt/types": "^2.13.3",
+    "@nuxt/typescript-build": "^2.0.2",
+    "@nuxtjs/eslint-config-typescript": "^2.0.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "sass": "^1.26.10",
+    "sass-loader": "^8.0.2",
+    "vuetify-loader": "^1.6.0"
   },
+  "main": "",
   "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt",
-    "generate": "nuxt generate && rm -rf docs && cp -r dist docs",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --ignore-pattern docs .",
+    "generate": "rm -rf docs && nuxt generate",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --ignore-pattern docs .",
     "start": "nuxt start",
     "test": "npm run lint"
   }
