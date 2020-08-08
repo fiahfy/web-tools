@@ -1,18 +1,20 @@
-module.exports = {
+export default {
   /*
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(_config, _ctx) {},
+    extend() {},
   },
 
   /*
-   ** Build modules
+   ** Nuxt.js dev-modules
    */
   buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api'],
+
+  /*
+   ** Auto import components
+   */
+  components: true,
 
   /*
    ** Global CSS
@@ -55,7 +57,7 @@ module.exports = {
   },
 
   /*
-   ** SPA or Universal
+   ** Nuxt rendering mode
    */
   mode: 'spa',
 
